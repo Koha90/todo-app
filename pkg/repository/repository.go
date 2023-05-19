@@ -1,6 +1,8 @@
 // Package repository has repository for application.
 package repository
 
+import "github.com/jmoiron/sqlx"
+
 // Authorization has methods for authorization in application todo-app.
 type Authorization interface{}
 
@@ -18,6 +20,6 @@ type Repository struct {
 }
 
 // NewService constructor of service application.
-func NewRepository() *Repository {
+func NewRepository(db *sqlx.DB) *Repository {
 	return &Repository{}
 }
