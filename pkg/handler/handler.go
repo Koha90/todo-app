@@ -1,10 +1,21 @@
 // Package handler has methods for api.
 package handler
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+
+	"github.com/koha90/todo-app/pkg/service"
+)
 
 // Handler has fields for handler api.
-type Handler struct{}
+type Handler struct {
+	services *service.Service
+}
+
+// NewHandler constructor for handler
+func NewHandler(services *service.Service) *Handler {
+	return &Handler{services: services}
+}
 
 // InitRoutes initilazing routes api.
 func (h *Handler) InitRoutes() *gin.Engine {
