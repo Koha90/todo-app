@@ -28,9 +28,9 @@ func NewPostgresDB(cfg Config) (*sqlx.DB, error) {
 		return nil, err
 	}
 
-	errPing := db.Ping()
+	err = db.Ping()
 	if err != nil {
-		return nil, errPing
+		return nil, err
 	}
 
 	return db, nil
