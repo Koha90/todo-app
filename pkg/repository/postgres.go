@@ -7,6 +7,14 @@ import (
 	"github.com/jmoiron/sqlx"
 )
 
+const (
+	userTable       = "users"
+	todoListsTable  = "todo_lists"
+	userListsTable  = "users_lists"
+	todoItemsTable  = "todo_items"
+	listsItemsTable = "lists_items"
+)
+
 // Config has configuration for connection to postgresql.
 type Config struct {
 	Host     string
